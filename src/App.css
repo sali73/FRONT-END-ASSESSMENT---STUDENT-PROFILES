@@ -1,0 +1,131 @@
+body {
+  background-color: #efefef;
+  box-sizing: border-box;
+}
+
+.search {
+  width: 95%;
+  border: none;
+  padding-bottom: 8px;
+  font-size: 18px;
+  border-bottom: 2px solid #efefef;
+  outline: none;
+}
+
+.search:focus {
+  border-bottom: 2px solid black;
+}
+
+.card-container {
+  width: 60vw;
+  height: 82vh;
+  margin: 0 auto;
+  margin-top: 6vh;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 0;
+  position: relative;
+  box-shadow: 5px 5px 10px #cacaca;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* hide scrollbar on IE and Edge */
+  scrollbar-width: none; /* hide scrollbar on Firefox */
+}
+
+.card-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+  position: relative;
+  box-sizing: content-box;
+}
+
+.student-img {
+  width: 30%;
+  height: 200px;
+  margin-left: 0;
+  position: relative;
+}
+
+.student-img img {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.student-name {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.student-info {
+  margin-top: 1rem;
+  height: 90%;
+  text-align: initial;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.expand-btn {
+  color: #a9a9a9;
+  position: relative;
+  top: -5px;
+  right: 20px;
+  font-size: 4.5rem;
+  cursor: pointer;
+}
+
+.expand-btn:hover {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.gradeList {
+  position: relative;
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .card-container {
+    width: 90%;
+    height: 90vh;
+    margin-top: 2vh;
+  }
+  .student-img {
+    height: 100px;
+  }
+  .student-img img {
+    width: 50px;
+    height: 50px;
+  }
+  .student-info {
+    width: 100%;
+    font-size: smaller;
+  }
+  .student-name {
+    font-size: 1.5em;
+  }
+  .expand-btn {
+    top: 3px;
+    right: 15px;
+    font-size: 3rem;
+  }
+}
