@@ -8,15 +8,20 @@ export default function Cart(Props) {
     const products = useContext(ProductContext)
     const [product, setProduct] = useState(products)
     const [cart, setCart] = useState([])
-    
-  
+    const [msg, setMsg] = useState(' your cart is empty!')
     function addtocart(item) {
       let cart2 = [...cart]
       cart2.push({ ...item })
       product.map((i) => {
         if (i.id === item.id) {
-          i.cart = true
+          if(i.qty >= 1){
+            i.cart = true;
+            i.qty -= 1
+            setMsg('')
+          }else {
+            setMsg('no more stock')
         }
+        }        
       })
       setCart(cart2)
     }
@@ -44,7 +49,6 @@ export default function Cart(Props) {
 
     function decrease(item) {
         let x = cart.map((i) => {
-    
           if (item.id == i.id && i.qty > 1) {
             i.qty -= 1
           }
@@ -65,6 +69,7 @@ export default function Cart(Props) {
     return (
       <div>
          <Link to='/cart-list' > cart-list</Link>
+         {msg}
         <div>
           {product.map((item) => (
             <div key={item.id}>
